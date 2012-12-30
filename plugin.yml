@@ -1,0 +1,52 @@
+name: CastleBreach
+version: 0.0.6 - Alpha
+author: AquaXV
+main: com.minecraftserver.castlebreach.CastleBreach
+
+commands:
+    cb:
+permissions:
+    castlebreach.*:
+        children:
+            castlebreach.region.help: true
+            castlebreach.region.define: true
+            castlebreach.region.delete: true
+            castlebreach.region.override: true
+            castlebreach.admin.bypass: true
+            castlebreach.admin.lookup: true
+            castlebreach.user.lookup: true
+            castlebreach.user.help: true
+            castlebreach.user.version: true
+    castlebreach.region.*:
+        children:
+            castlebreach.region.help: true
+            castlebreach.region.define: true
+            castlebreach.region.delete: true
+            castlebreach.region.override: true
+    castlebreach.user.*:
+        children:
+            castlebreach.user.lookup: true
+            castlebreach.user.help: true
+            castlebreach.user.version: true
+    castlebreach.admin.*:
+        children:
+            castlebreach.admin.lookup: true
+            castlebreach.admin.bypass: true
+    castlebreach.region.help:
+        default: op
+    castlebreach.region.define:
+        default: op
+    castlebreach.region.delete:
+        default: op
+    castlebreach.region.override:
+        default: op
+    castlebreach.admin.bypass:
+        default: op
+    castlebreach.admin.lookup:
+        default: op
+    castlebreach.user.lookup:
+        default: true
+    castlebreach.user.help:
+        default: true
+    castlebreach.user.version:
+        default: true

@@ -7,6 +7,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.HashMap;
 
+import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -27,31 +29,37 @@ public class CBIOManager {
 		return result;
 	}
 	
-	static String pointfile = "player_points.bin";
 	static JavaPlugin jp;
+	static File pointfile = new File(jp.getDataFolder() + File.separator + "player_points.bin");
 	public static HashMap<String, Integer> PlayerPoints = new HashMap<String, Integer>();
 	
-	public static Object getPoints(Player player){
+	public static int getPoints(CommandSender sender, Player player){
 		int Points = 0;
 		try {
-			load("plugins" + File.separator + jp.getDataFolder() + File.separator + pointfile);
+			load(pointfile.toString());
 			Points = PlayerPoints.get(player.getName());
 			return Points;
 		} catch (Exception e){
-			
+			setPoints(sender, player, Points);
 		}
-		return null;
+        return Points;
 	}
 	
-	public static Object setPoints(Player player, int Points){
+	public static Object setPoints(CommandSender sender, Player player, int Points){
 		try {
-			load("plugins" + File.separator + jp.getDataFolder() + File.separator + pointfile);
+			load(pointfile.toString());
 			PlayerPoints.put(player.getName(), Points);
-			save(PlayerPoints, "plugins" + File.separator + jp.getDataFolder() + File.separator + pointfile);
+			save(PlayerPoints, pointfile.toString());
 		} catch (Exception e){
-			
+			try {
+				if (!pointfile.exists()){
+					pointfile.mkdir();
+				}
+			} catch (Exception e1){
+				sender.sendMessage(ChatColor.DARK_RED + "Error saving playerfiles.");
+			}
 		}
-		return null;
+		return Points;
 	}
 	
 }

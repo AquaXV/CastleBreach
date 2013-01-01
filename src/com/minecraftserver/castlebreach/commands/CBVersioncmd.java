@@ -12,7 +12,7 @@ public class CBVersioncmd {
 			sender.sendMessage(ChatColor.DARK_RED + "You have insufficient permissions to do this.");
 			return false;
 		}
-		sender.sendMessage(ChatColor.BLUE + "Version: " + ChatColor.GOLD + cb.getVersion() + "\n" + ChatColor.BLUE + "Author: " + ChatColor.GOLD + cb.getAuthor().replace("[", "").replace("]", ""));
+		sender.sendMessage(ChatColor.BLUE + "CastleBreach \nVersion: " + ChatColor.GOLD + cb.getVersion() + "\n" + ChatColor.BLUE + "Author: " + ChatColor.GOLD + cb.getAuthor().replace("[", "").replace("]", ""));
 		return true;
 
 	}

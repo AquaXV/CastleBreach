@@ -33,6 +33,8 @@ public class CBCommandHandler {
 			CBVersioncmd.run(sender, cb);
 		} else if (args[0].equalsIgnoreCase("region")){
 			CBRegioncmd.run(sender, args, cb);
+		} else if (args[0].equalsIgnoreCase("lookup")){
+		    CBLookupcmd.run(sender, args, cb);
 		}
 	}	
 	

@@ -13,13 +13,14 @@ public class CBSQLManager {
 
     public CBSQLManager(CastleBreach parent) {
         plugin = parent;
-        db = new MySQL(plugin.getLogger(), "CB", "CastleBreach", "root", "LoLxD");
+        db = new MySQL(plugin.getLogger(), "CB", "Local MySQL55", "root", "LoLxD");
         openDB();
         firstRun();
     }
 
     private boolean openDB() {
         return db.open();
+        
     }
 
     private boolean closeDB() {

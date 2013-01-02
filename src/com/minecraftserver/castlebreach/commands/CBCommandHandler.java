@@ -9,7 +9,7 @@ import com.minecraftserver.castlebreach.CastleBreach;
 
 public class CBCommandHandler {
 
-	private CommandSender getSender(CommandSender cmdsender) {
+    private CommandSender getSender(CommandSender cmdsender) {
         CommandSender sender;
         if (!cmdsender.equals(Bukkit.getConsoleSender())) {
             sender = (Player) cmdsender;
@@ -18,24 +18,24 @@ public class CBCommandHandler {
         }
         return sender;
     }
-	
-	public void executeCommand(CommandSender cmdsender, Command cmd, String label,
-            String[] args, CastleBreach cb) {
-		
-		CommandSender sender; 
-		sender = getSender(cmdsender);
-		
-		if (args.length < 1){
-			CBHelpcmd.run(sender);
-		} else if (args[0].equalsIgnoreCase("help")){
-			CBHelpcmd.run(sender);
-		} else if (args[0].equalsIgnoreCase("version")){
-			CBVersioncmd.run(sender, cb);
-		} else if (args[0].equalsIgnoreCase("region")){
-			CBRegioncmd.run(sender, args, cb);
-		} else if (args[0].equalsIgnoreCase("lookup")){
-		    CBLookupcmd.run(sender, args, cb);
-		}
-	}	
-	
+
+    public void executeCommand(CommandSender cmdsender, Command cmd, String label, String[] args,
+            CastleBreach cb) {
+
+        CommandSender sender;
+        sender = getSender(cmdsender);
+
+        if (args.length < 1) {
+            CBHelpcmd.run(sender);
+        } else if (args[0].equalsIgnoreCase("help")) {
+            CBHelpcmd.run(sender);
+        } else if (args[0].equalsIgnoreCase("version")) {
+            CBVersioncmd.run(sender, cb);
+        } else if (args[0].equalsIgnoreCase("region")) {
+            CBRegioncmd.run(sender, args, cb);
+        } else if (args[0].equalsIgnoreCase("lookup")) {
+            CBLookupcmd.run(sender, args, cb);
+        }
+    }
+
 }

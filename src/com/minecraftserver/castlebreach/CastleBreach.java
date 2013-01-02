@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -12,15 +13,19 @@ import com.minecraftserver.castlebreach.commands.CBCommandHandler;
 
 public class CastleBreach extends JavaPlugin {
 
-    public static HashMap<String, Integer> Points = new HashMap<String, Integer>();
-    Logger                                 log    = Logger.getLogger("MineCraft");
+    Logger           log = Logger.getLogger("MineCraft");
+    CBSQLManager     sqlman;
+    CBCommandHandler cbcmd;
 
     public void onEnable() {
         if (!getDataFolder().exists()) getDataFolder().mkdir();
         log.info("[CastleBreach] Enabled system, version: " + getVersion() + "!");
+        sqlman = new CBSQLManager(this);
+        cbcmd = new CBCommandHandler();
     }
 
     public void onDisable() {
+        sqlman.stop();
         log.info("[CastleBreach] Disabled system!");
     }
 
@@ -38,7 +43,13 @@ public class CastleBreach extends JavaPlugin {
         if (!cmd.getName().equalsIgnoreCase("cb")) {
             return false;
         }
-        CBCommandHandler cbcmd = new CBCommandHandler();
+        //testing
+        if(args.length>=0){
+            Bukkit.broadcastMessage("Player Jim got"+sqlman.getPoints("Jim")+" Points!");
+            Bukkit.broadcastMessage("Player Jim earned 20 Points!");
+            sqlman.addPoints("Jim", 20);
+            Bukkit.broadcastMessage("Player Jim got"+sqlman.getPoints("Jim")+" Points!");
+        }
         cbcmd.executeCommand(cmdsender, cmd, label, args, this);
         return true;
     }

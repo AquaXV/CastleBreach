@@ -1,0 +1,70 @@
+Feature List:
+
+--Castle
+    --Protection
+        --Like PS or like WG ?
+	    --Size
+    --Power-ups
+		--Special Castle Blocks
+	--Castle Features
+		--Effects on players
+			--friendly
+			--enemy
+    --Clan/Guild support
+	--Building Permissions
+	--Attack warnings (if a castle get attacked)
+	--Wars or other games (like CTF between castles)
+		--special blocks for this (like a block where the flag will be placed)
+	
+--Player Base
+	--Protection
+        --Like PS or like WG ?
+	--Clan/Guild support
+	--Rank Limitations
+	--Entry protection
+		--possibility to bypass it
+	--Snitch
+	
+--Guilds
+	--Chat
+	--Player Name Tags
+	--Possibility to change guild?
+	--Special Guild features?
+	--Guild castles
+	--Automatic Guild rank system
+	--guild bank
+		--guild fee
+	--guild upgrades
+
+--Point System
+	--Guild points
+	--Player points
+	--Clan points
+	--getting Points
+		--Killing Players
+			--higher Player ranks=>more points
+		--Raiding Bases
+			--stronger Bases->more points
+		--conquer castles/win castle games (clan/guild only)
+	--Point leaderboard
+	--Points used as currency
+		--currency support
+
+--Clans
+	--currency support
+		--entry fee
+		--clan bank account
+	--clan upgrades
+	--clan leaderboard
+	--member limit
+	--verification
+	--clan chat?
+	--clan tag
+	--clan rank
+		--can be definied by leaders
+		--can set permission for clan ranks
+
+--Other requirements
+	--IO
+	--SQL
+	--Chat System

@@ -34,7 +34,7 @@ public class CBSQLManager {
         if (!db.isTable("PlayerPoints")) {
             try {
                 db.query(db
-                        .prepare("CREATE TABLE PlayerPoints(P_Id int NOT NULL AUTO_INCREMENT,Playername varchar(255),Points int)"));
+                        .prepare("CREATE TABLE PlayerPoints(P_Id int PRIMARY KEY NOT NULL AUTO_INCREMENT,Playername varchar(255),Points int);"));
             } catch (SQLException e) {
                 e.printStackTrace();
             }

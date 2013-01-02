@@ -45,10 +45,10 @@ public class CastleBreach extends JavaPlugin {
         }
         //testing
         if(args.length>=0){
-            Bukkit.broadcastMessage("Player Jim got"+sqlman.getPoints("Jim")+" Points!");
-            Bukkit.broadcastMessage("Player Jim earned 20 Points!");
-            sqlman.addPoints("Jim", 20);
-            Bukkit.broadcastMessage("Player Jim got"+sqlman.getPoints("Jim")+" Points!");
+            Bukkit.broadcastMessage("Player Baby got"+sqlman.getPoints("Jim")+" Points!");
+            Bukkit.broadcastMessage("Player Baby earned 20 Points!");
+            sqlman.addPoints("Baby", 20);
+            Bukkit.broadcastMessage("Player Baby got"+sqlman.getPoints("Jim")+" Points!");
         }
         cbcmd.executeCommand(cmdsender, cmd, label, args, this);
         return true;
